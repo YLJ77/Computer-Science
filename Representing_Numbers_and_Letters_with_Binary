@@ -1,0 +1,5 @@
+32-Bit Floating Point Number
+
+[0][10001000][00111000111100110011010] = 626.9
+ ↓     ↓                 ↓
+SIGN  EXPONENT(8 BITS)  SIGNIFICAND(23 BITS)
