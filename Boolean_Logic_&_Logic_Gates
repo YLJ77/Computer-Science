@@ -1,0 +1,154 @@
+In computers, an "on" state, when electricity is flowing, represents true.
+The "off" state, no electricity flowing, represents false.
+
+BOOLE'S APPROACH ALLOWD TRUTH TO BE SYSTEMATICALLY AND FORMLLY PROVEN,
+THROUGH LOGIC EQUATIONS WHICH HE INTRODUCED IN HIS FIRST BOOK,
+"THE MATHEMATICAL ANALYSIS OF LOGIC" IN 1847.
+
+
+
+---------------------------
+| INPUT      | OUTPUT     |
+---------------------------
+| TRUE       | TRUE       |
+---------------------------
+| FALSE      | FALSE      |
+---------------------------
+
+                      |
+                      |
+                     /
+                  | / 
+                  |/
+                  | 
+------------------|
+       ↑          |\
+     INPUT        | \ ↙ OUTPUT
+                     \ 
+                      |
+                      |
+
+
+
+
+BOOLEAN LOGIC TABLE FOR NOT
+
+---------------------------
+| INPUT      | OUTPUT     |
+---------------------------
+| TRUE       | FALSE      |
+---------------------------
+| FALSE      | TRUE       |
+---------------------------
+
+NOT GATE:
+
+                         OUTPUT
+                      |    ↓
+                      |----------
+                      |   OFF(ON)
+                     /
+                  | / ↖ CURRENT
+                  |/
+       ON(OFF)    | 
+------------------|
+       ↑          |\
+     INPUT        | \ ↙ GROUND
+                     \ 
+                      |
+                      |
+                    -----
+                     ---
+                      -
+
+
+BOOLEAN LOGIC TABLE FOR AND
+
+--------------------------------------
+| INPUT A    | OUTPUT B   | OUTPUT   |
+--------------------------------------
+| TRUE       | TRUE       | TRUE     |
+--------------------------------------
+| TRUE       | FALSE      | FALSE    |
+--------------------------------------
+| FALSE      | TRUE       | FALSE    |
+--------------------------------------
+| FALSE      | FALSE      | FALSE    |
+--------------------------------------
+
+AND GATE
+
+  CURRENT ○-------------    -----    ----------- OUTPUT
+                        \  /     \  /
+                         \/       \/
+                        -----    -----
+                          |        |
+                          |        |
+                          |        |
+                          ○        ○
+                   TRANSISTOR A  TRANSISTOR B  
+
+
+
+
+BOOLEAN LOGIC TABLE FOR OR
+
+--------------------------------------
+| INPUT A    | OUTPUT B   | OUTPUT   |
+--------------------------------------
+| TRUE       | TRUE       | TRUE     |
+--------------------------------------
+| TRUE       | FALSE      | TRUE     |
+--------------------------------------
+| FALSE      | TRUE       | TRUE     |
+--------------------------------------
+| FALSE      | FALSE      | FALSE    |
+--------------------------------------
+
+                        OR GATE
+            
+           |---------------------    -------------                               |
+           |                     \  /            |
+           |                      \/             |
+           |                     -----           |
+CURRENT ○---                       |             ---○  OUTPUT
+           |                       |             |
+           |                       |             |
+           -------------    -----  | -------------
+                        \  /     \ |/
+                         \/       \/
+                        -----      |(这个小弧线表示跳过了另一条电路，两条电路没有直接连接)  
+                          |        |
+                          |        |
+                          |        |
+                          ○        ○
+                   TRANSISTOR A  TRANSISTOR B  
+
+
+
+
+
+BOOLEAN LOGIC TABLE FOR XOR
+
+--------------------------------------
+| INPUT A    | OUTPUT B   | OUTPUT   |
+--------------------------------------
+| TRUE       | TRUE       | FALSE    |
+--------------------------------------
+| TRUE       | FALSE      | TRUE     |
+--------------------------------------
+| FALSE      | TRUE       | TRUE     |
+--------------------------------------
+| FALSE      | FALSE      | FALSE    |
+--------------------------------------
+
+                                   |-------|
+A -----|-----| -----NOT-----|------| AND   | 
+   |   | AND |                     |       |------
+   |   |     |                     |       |
+B -)---|-----|                 |---|-------|
+   |   |                       |
+   |   |           |------|    |
+   |---)-----------| OR   |    |
+       |-----------|      |-----
+                   |------|
