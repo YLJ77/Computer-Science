@@ -1,0 +1,97 @@
+circuits that can record both 0s and 1s
+
+                |-----|
+A --------------| OR  |------------- OUTPUT
+B --------------|-----|     | 
+  |                         |
+  |--------------------------
+
+                |-----|
+A --------------| AND |------------- OUTPUT
+B --------------|-----|     | 
+  |                         |
+  |--------------------------
+
+
+AND-OR LATCH:
+It has two inputs, a "set" input, which sets the output to a 1, and a "reset" input,
+which resets the output to a 0. If set and reset are both 0, the circuit just outputs
+whatever was last put in it. In other words, it remembers a single bit of information! -- Memory
+
+THIS IS CALLED A "LATCH" BECAUSE IT "LATCHES ONTO" A PARITICULAR VALUE AND STAYS THAT WAY.
+THE ACTION OF PUTTING DATA INTO MEMORY IS CALLED WRITING, WHEREAS GETING THE DATA OUT IS CALLED READING.
+
+         |---------------------------------------|
+         |                                       |
+         -----|----|                             |
+SET ----------| OR |---------------------|----|  |
+              |----|                     |AND |--○----- OUTPUT
+                       |----|            |    |
+RESET -----------------| NOT|------------|----|
+                       |----|
+
+
+Gated Latch(since the "gate" can be opened or closed)
+
+
+                                         |----------------------------|
+                             |-----|     |   |----|                   |
+DATA INPUT   ----------------| AND |     ----|    |                   |
+                 |           |     |---------| OR |----|              |
+              ---)-----------|-----|         |----|    |              |
+              |  |                                     |              |
+              |  |    |-----|                          |              |
+              |  |----| NOT |                          |              |
+              |       |-----|-----|-----|              |-----|-----|  |
+              |                   |     |      |-----|       |     |  |
+WRITE ENABLE ---------------------| AND |------| NOT |-------| AND |--------- DATA OUTPUT
+                                  |-----|      |-----|       |-----|
+
+
+                0(1)  |-------|
+DATA IN     ----------| GATED |  0
+                 0    | LATCH |------ DATA OUT
+WRITE ENABLE ---------|-------|
+
+
+                1(0)  |-------|
+DATA IN     ----------| GATED | 1(0)
+                 1    | LATCH |------ DATA OUT
+                      |   1(0)|
+WRITE ENABLE ---------|-------|
+
+A group of latches operating like this is called a register,
+which holds a single number, and the number of bits in aregister is called its width.
+
+
+
+            8-BIT REGISTER
+    D: DATA IN  E: WRITE ENABLE Q: DATA OUT
+
+    1       0       1       1       0       1       0       1     
+    |       |       |       |       |       |       |       |     
+  |------||------||------||------||------||------||------||------|   
+  | Q    || Q    || Q    || Q    || Q    || Q    || Q    || Q    |   
+  | D  E || D  E || D  E || D  E || D  E || D  E || D  E || D  E |   
+  |------||------||------||------||------||------||------||------|   
+1   |  |    |  |    |  |    |  |    |  |    |  |    |  |    |  |  
+----◡-------◡-------◡-------◡-------◡-------◡-------◡-------◡--------
+    |       |       |       |       |       |       |       |     
+    1       0       1       1       0       1       0       1     
+
+We the send our data in using the 8 data wires, and then set enable back to 0, 
+and 8 bit walue is now saved in memory: 10110101
+
+
+
+
+
+Putting latches side-by-side works ok for a small-ish number of bits.
+A 64 bit register would need 64 wires running to the data pins, and
+64 wires running to outputs. Luckily we only need 1 wire to enable all
+the latches, but that's still 129 wires. For 256 bits, we end up with
+513 wires! The solution is matrix!
+
+In this. matrix, we don't arrage our latches in a row, we put them in a
+grid. For 256 bits, we need a 16 by 16 grid of latches with 16 rows and
+columns of wires.
