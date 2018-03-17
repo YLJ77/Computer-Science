@@ -50,14 +50,15 @@ WRITE ENABLE ---------------------| AND |------| NOT |-------| AND |--------- DA
 
                 0(1)  |-------|
 DATA IN     ----------| GATED |  0
-                 0    | LATCH |------ DATA OUT
+                      | LATCH |------ DATA OUT
+                 0    |       |
 WRITE ENABLE ---------|-------|
 
 
                 1(0)  |-------|
 DATA IN     ----------| GATED | 1(0)
-                 1    | LATCH |------ DATA OUT
-                      |   1(0)|
+                      | LATCH |------ DATA OUT
+                 1    |   1(0)|
 WRITE ENABLE ---------|-------|
 
 A group of latches operating like this is called a register,
