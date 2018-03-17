@@ -1,0 +1,63 @@
+机械继电器
+
+        -----  \------------------
+                        |
+              -----------
+              |
+CONTROL WIRE→ |
+              |
+
+Unfortunately,the mechanical arm inside of a relay has mass,and therefore can't
+move instantly between opened and close states.
+
+A good relay in the 1940's might be able to flick back and forth fifty times in a second.
+
+
+
+
+
+真空管(could switch thousands of times per second)
+
+
+
+
+
+晶体管
+
+Today, computers use transistors that are smaller than 50 nanometers in size - for reference, 
+a sheet of paper is roughly 100,000 nanometers thick.
+
+They're not only incredibly small, they're super fast - they can switch states millions of times 
+per second, and can run for decades.
+
+
+
+
+                      |
+                      |
+                     /
+                  | /  ↖ ELECTRODE
+                  |/
+                  | ← SEMICONDUCTOR (sometimes can conduct electricity, and other time resist it)
+------------------|
+       ↑          |\
+ CONTROL WIRE     | \
+                     \ ↙ ELECTRODE
+                      |
+                      |
+
+
+
+
+                      |
+                      |
+                     /
+                  | / 
+                  |/
+                  | ← "GATE" ELECTRODE
+------------------|
+       ↑          |\
+                  | \
+                     \ 
+                      |
+                      |
